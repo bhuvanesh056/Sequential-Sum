@@ -8,17 +8,25 @@ To write an Assembly Language Program (ALP) in 8051 to calculate the sum of 5 nu
 2.Personal Computer
 
 ## ALGORITHM:
-1.Initialize the data pointer to the starting address where the numbers are stored.
+1.Start the program.
 
-2.Initialize a register or accumulator to 00H to store the sum.
+2.Initialize R0 with the starting address (30H) where numbers are stored.
 
-3.Load each number sequentially from memory and add it to the accumulator.
+3.Load R2 with count value 05H (since there are 5 numbers).
 
-4.Repeat this process for all 5 numbers.
+4.Clear the accumulator (A) to start summation from zero.
 
-5.Store the final result in another memory location.
+5.Fetch the number from memory pointed by R0.
 
-6.Stop the program execution.
+6.Add the fetched number to the accumulator.
+
+7.Increment R0 to point to the next memory location.
+
+8.Decrement R2 and repeat steps 5–7 until R2 = 0.
+
+9.After the loop ends, store the final sum in memory location 35H.
+
+10.End the program.
 
 ## PROGRAM:
 ```
